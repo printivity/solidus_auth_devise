@@ -11,9 +11,6 @@ module Spree
     if defined?(Spree::SoftDeletable)
       include Spree::SoftDeletable
     else
-      acts_as_paranoid
-      include Spree::ParanoiaDeprecations
-
       include Discard::Model
       self.discard_column = :deleted_at
     end
